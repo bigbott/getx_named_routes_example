@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_named_routes_example/routes.dart';
 import 'package:getx_named_routes_example/view/widgets/navigation_history.dart';
-import 'package:navigation_history_observer/navigation_history_observer.dart';
-
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({super.key});
   @override
   Widget build(BuildContext context) {
-
-    NavigationHistoryObserver().history;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("SecondScreen"),
@@ -30,6 +25,19 @@ class SecondScreen extends StatelessWidget {
                 onPressed: () {
                   Get.back();
                 }),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                    child: const Text("Get.toNamed() with parameter"),
+                    onPressed: () {
+                      Get.toNamed(Routes.SECOND_SCREEN, parameters: {'id':'1'}, preventDuplicates: false);
+                    }),
+                    const SizedBox(width: 10,),
+                 Text(Get.parameters['id']??'' ),
+              ],
+            ),
+                
             ElevatedButton(
               child: const Text("Get.toNamed(Routes.THIRD_SCREEN);"),
               onPressed: () {
@@ -42,7 +50,6 @@ class SecondScreen extends StatelessWidget {
                 Get.offNamed(Routes.THIRD_SCREEN);
               },
             ),
-           
           ],
         ),
       ),
