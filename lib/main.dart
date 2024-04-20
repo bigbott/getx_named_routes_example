@@ -15,10 +15,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       home: const FirstScreen(),
+      
       initialRoute: Routes.FIRST_SCREEN,
       getPages: Routes.routes,
       navigatorObservers: [NavigationHistoryObserver()],
-
       debugShowCheckedModeBanner: false,
     );
   }

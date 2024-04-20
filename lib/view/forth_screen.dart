@@ -50,6 +50,7 @@ class ForthScreen extends StatelessWidget {
                 onPressed: () {
                   Get.close(2);
                 }),
+           
           ],
         ),
       ),

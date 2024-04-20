@@ -7,24 +7,21 @@ class ThirdScreen extends StatelessWidget {
   const ThirdScreen({super.key});
   @override
   Widget build(BuildContext context) {
-   for (var page in  Get.keys.keys){
-     print(page);
-   }
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
         title: const Text("ThirdScreen"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-           const NavigationHistory(),
+            const NavigationHistory(),
             ElevatedButton(
                 child: const Text("Get.back()"),
                 onPressed: () {
                   Get.back();
                 }),
-                 ElevatedButton(
+            ElevatedButton(
               child: const Text("Get.toNamed(Routes.SECOND_SCREEN);"),
               onPressed: () {
                 Get.toNamed(Routes.SECOND_SCREEN);
@@ -35,12 +32,17 @@ class ThirdScreen extends StatelessWidget {
                 onPressed: () {
                   Get.toNamed(Routes.FORTH_SCREEN);
                 }),
-                ElevatedButton(
+            ElevatedButton(
                 child: const Text("Get.offAndToNamed(Routes.FORTH_SCREEN);"),
                 onPressed: () {
                   Get.offAndToNamed(Routes.FORTH_SCREEN);
                 }),
-                
+                 ElevatedButton(
+              child: const Text("Get.toNamed(Routes.SECOND_SCREEN);"),
+              onPressed: () {
+                Get.toNamed(Routes.SECOND_SCREEN);
+              },
+            ),
           ],
         ),
       ),

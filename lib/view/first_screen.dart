@@ -47,6 +47,7 @@ class FirstScreen extends StatelessWidget {
               onPressed: () {
                 Get.bottomSheet(const SizedBox(
                     height: 100,
+                    
                     child: Center(child: Text("This is a bottomsheet"))));
               },
             ),
